@@ -6,7 +6,7 @@ const { argv } = require('./config/yargs.js')
 const { leercsv, generardatos } = require('./buscador/conexion.js');
 
 let comando = argv._[0]
-console.log(comando)
+
 switch (comando) {
     case 'mostrar':
         console.log(argv.archivo, argv.anio, argv.pais)

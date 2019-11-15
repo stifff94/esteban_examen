@@ -3,7 +3,7 @@ const fs = require('fs');
 let leercsv = (path) => {
     return new Promise((resolve, reject) => {
         fs.readFile(path, 'utf8', function(err, data) {
-            console.log("llego aqui 2")
+
             if (err) {
                 reject(err);
             } else {
@@ -39,9 +39,10 @@ let generardatos = (datos, año, pais) => {
 
                     limit2 = datos2[pos1].length - 2
                     var numero = datos2[pos1].substring(2, limit2)
-                    data += "Nombre pais:\t" + datos2[0].substring(1, 8) + "\n";
+                    limite = datos2[0].length - 1
+                    data += "Nombre pais:\t" + datos2[0].substring(1, limite) + "\n";
                     data += "Año:\t" + año + "\n";
-                    data += "Numeros de subscripciones:\t" + datos2[pos1].substring(2, limit2) + "\n";
+                    data += "Numeros de subscripciones:\t" + datos2[pos1].substring(1, limit2) + "\n";
                 }
             } catch (err) {
 
